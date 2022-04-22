@@ -26,4 +26,4 @@ swift_condensed <- swift %>%
 View(swift_condensed)
 colnames(swift_condensed)
 swift_condensed <- swift_condensed %>% select(artist_name, album_type, album_release_date, danceability, energy, key, loudness, mode, speechiness, acousticness, instrumentalness, liveness, valence, time_signature, duration_ms, explicit, track_name, track_number, album_name, key_mode) %>% distinct()
-#add rep, combine 1989, add Taylor Swift debut, and keep deluxe sn 
+#The Graphs (said in the same voice as the aliens saying the claw in Toy Story)
