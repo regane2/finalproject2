@@ -1,3 +1,4 @@
+#Question: What is the most popular album and why? 
 library(spotifyr)
 library(tidyverse)
 library(knitr)
@@ -8,6 +9,7 @@ access_token <- get_spotify_access_token()
 swift <- get_artist_audio_features('taylor swift')
 View(swift)
 #slicing and dicing 
+#I got rid of the original albums,live versions, Karaoke, Radio Release, and others so that it is down to the Deluxe Editions. There are duplicates but that's because I can't figure that out. Which. Fair enough. 
 swift %>% distinct(album_name)
 albums_to_keep <- swift %>% 
   filter(grepl("\\(", album_name)) %>% 
@@ -28,3 +30,5 @@ colnames(swift_condensed)
 swift_condensed <- swift_condensed %>% select(artist_name, album_type, album_release_date, danceability, energy, key, loudness, mode, speechiness, acousticness, instrumentalness, liveness, valence, time_signature, duration_ms, explicit, track_name, track_number, album_name, key_mode) %>% distinct()
 #The Graphs (said in the same voice as the aliens saying the claw in Toy Story)
 ggplot(swift_condensed, aes(x= duration_ms, y = album_name)) + geom_point()
+ggplot(swift_condensed, aes(x= track_number, y= danceability)) + geom_point()
+ggplot(swift_condensed, aes(x= danceability, y= album_name)) + geom_point()
