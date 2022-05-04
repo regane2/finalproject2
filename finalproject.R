@@ -1,5 +1,5 @@
 #Question: What makes 1989 one of the most popular Taylor Swift albums and why? 
-#From someone who has 1989 at the Bottom of her tier ranking. (reputation supremacy)
+#By:Someone who has 1989 at the Bottom of her tier ranking. (reputation supremacy)
 
 library(spotifyr)
 library(tidyverse)
@@ -37,8 +37,7 @@ colnames(swift_condensed)
 swift_condensed <- swift_condensed %>% select(artist_name, album_type, album_release_date, danceability, energy, key, loudness, mode, speechiness, acousticness, instrumentalness, liveness, valence, time_signature, duration_ms, explicit, track_name, track_number, album_name, key_mode) %>% distinct()
 
 #The Graphs (said in the same voice as the aliens saying the claw in Toy Story)
-ggplot(swift_condensed, aes(x= duration_ms, y = album_name)) + geom_point()
 ggplot(swift_condensed, aes(x= track_number, y= danceability, color = album_name)) + geom_point()
-ggplot(swift_condensed, aes(x= danceability, y= album_name)) + geom_point()
+ggplot(swift_condensed, aes(x = )
 #The decision 
 #
