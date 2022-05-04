@@ -30,6 +30,7 @@ albums_to_keep <- swift %>%
 albums_to_keep
 albums_to_keep <- c(albums_to_keep, 'reputation')
 albums_to_keep <- c(albums_to_keep, 'Taylor Swift')
+albums_to_keep <- c(albums_to_keep, "Lover")
 swift_condensed <- swift %>% 
   filter(album_name %in% albums_to_keep) %>% distinct()
 View(swift_condensed)
