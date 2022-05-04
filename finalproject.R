@@ -15,8 +15,10 @@ albums_to_keep <- swift %>%
   filter(grepl("\\(", album_name)) %>% 
   filter(!grepl('Karaoke', album_name)) %>%
   filter(!grepl('Big Machine Radio Release Special', album_name)) %>% 
+  filter(!grepl('US Version', album_name)) %>% 
   filter(!grepl('Japanese Version', album_name)) %>% 
-  filter(!grepl('Deluxe_package', album_name)) %>% 
+  filter(!grepl('Deluxe Package', album_name)) %>% 
+  filter(!grepl('1989 (Deluxe Edition)', album_name)) %>% 
   select(album_name) %>% 
   distinct(album_name) %>% 
   pull(album_name)
