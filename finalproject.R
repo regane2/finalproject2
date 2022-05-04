@@ -16,7 +16,8 @@ albums_to_keep <- swift %>%
   filter(!grepl('Karaoke', album_name)) %>%
   filter(!grepl('Big Machine Radio Release Special', album_name)) %>% 
   filter(!grepl('US Version', album_name)) %>% 
-  filter(!grepl('Japanese Version', album_name)) %>% 
+  filter(!grepl('Japanese Version', album_name)) %>%
+  filter(!grepl("International Version", album_name)) %>%
   filter(!grepl('Deluxe Package', album_name)) %>% 
   filter(!grepl('1989 (Deluxe Edition)', album_name)) %>% 
   select(album_name) %>% 
@@ -32,5 +33,5 @@ colnames(swift_condensed)
 swift_condensed <- swift_condensed %>% select(artist_name, album_type, album_release_date, danceability, energy, key, loudness, mode, speechiness, acousticness, instrumentalness, liveness, valence, time_signature, duration_ms, explicit, track_name, track_number, album_name, key_mode) %>% distinct()
 #The Graphs (said in the same voice as the aliens saying the claw in Toy Story)
 ggplot(swift_condensed, aes(x= duration_ms, y = album_name)) + geom_point()
-ggplot(swift_condensed, aes(x= track_number, y= danceability)) + geom_point()
+ggplot(swift_condensed, aes(x= track_number, y= danceability, color = album_name)) + geom_point()
 ggplot(swift_condensed, aes(x= danceability, y= album_name)) + geom_point()
