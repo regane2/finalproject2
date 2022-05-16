@@ -49,4 +49,3 @@ swift_condensed %>% group_by(album_name) %>% summarize(mean_danceability= mean(d
 
 #The decision 
 # People like 1989 the most because it is one of the most danceable albums! Also go me for predicting 1989 rerecord kinda! (she's releasing This Love (Taylor's Version) May 5th midnight!)
-# 
